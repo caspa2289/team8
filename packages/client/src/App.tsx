@@ -1,19 +1,13 @@
-import { useEffect } from 'react'
 import styles from './App.module.scss'
+import PageWrapper from './components/PageWrapper'
 
-function App() {
-  useEffect(() => {
-    const fetchServerData = async () => {
-      const url = `http://localhost:${__SERVER_PORT__}`
-      const response = await fetch(url)
-      const data = await response.json()
-      console.log(data)
-    }
-
-    fetchServerData()
-  }, [])
+const App = () => {
   return (
-    <div className={styles.wrapper}>Вот тут будет жить ваше приложение :)</div>
+    <PageWrapper>
+      <div className={styles.wrapper}>
+        Вот тут будет жить ваше приложение :)
+      </div>
+    </PageWrapper>
   )
 }
 
